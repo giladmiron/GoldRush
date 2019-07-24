@@ -21,6 +21,15 @@ class Matrix {
         this.alter(0, 0, 1)
         this.alter(numRows - 1, numColumns - 1, 2)
 
+        this.coins = 0
+        for (let i of this.matrix) {
+            for (let o of i) {
+                if (o == "C") {
+                    this.coins++
+                }
+            }
+        }
+        console.log(`there are ${this.coins} coins`)
         return this.matrix
     }
 

@@ -14,7 +14,7 @@ $('.sizeButton').on('click', function () {
 
 $(document).keypress(function (e) {
     e = e.which
-    console.log(e);
+    // console.log(e)
 
     switch (e) {
         case 97:

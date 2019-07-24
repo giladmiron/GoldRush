@@ -1,7 +1,7 @@
 class GoldRush extends Matrix {
     constructor(numRows, numColumns) {
         super(numRows, numColumns),
-        this.numColumns = numColumns
+            this.numColumns = numColumns
         this.numRows = numRows
         this.player1 = { score: 0 }
         this.player2 = { score: 0 }
@@ -27,13 +27,19 @@ class GoldRush extends Matrix {
         }
         let playerName = 'player' + player
         if (this.get(newPosition.y, newPosition.x) == 'C') {
-            this[playerName].score += 10
+            this[playerName].score++
+        }
+        console.log(this[playerName])
+        if (this[playerName].score >= this.coins / 2) {
+            alert(`${playerName} won the game!`)
+            location.reload()
         }
         if (this.get(newPosition.y, newPosition.x) == '2' || this.get(newPosition.y, newPosition.x) == '1') {
             return
         }
         this.alter(oldPosition.y, oldPosition.x, '.')
         this.alter(newPosition.y, newPosition.x, player)
+
     }
 }
 
