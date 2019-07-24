@@ -1,7 +1,16 @@
+
 const renderer = new Renderer()
-const board = new GoldRush(5, 5)
-renderer.renderScores()
-renderer.renderBoard(board.matrix)
+let board
+// const board = new GoldRush(5, 5)
+// renderer.renderScores()
+// renderer.renderBoard(board.matrix)
+
+$('.sizeButton').on('click', function () {
+    let size = $('.sizeInput').val()
+    board = new GoldRush(size, size)
+    renderer.renderScores()
+    renderer.renderBoard(board.matrix)
+})
 
 $(document).keypress(function (e) {
     e = e.which

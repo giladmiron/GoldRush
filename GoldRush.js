@@ -1,14 +1,16 @@
 class GoldRush extends Matrix {
     constructor(numRows, numColumns) {
         super(numRows, numColumns),
-            this.player1 = { score: 0 }
+        this.numColumns = numColumns
+        this.numRows = numRows
+        this.player1 = { score: 0 }
         this.player2 = { score: 0 }
     }
     movePlayer(player, direction) {
         let oldPosition = this.findCoordinate(player)
         let newPosition = { x: oldPosition.x, y: oldPosition.y }
         if (direction == 'down') {
-            if (oldPosition.y == 4) { return }
+            if (oldPosition.y == this.numRows - 1) { return }
             newPosition.y++
         }
         else if (direction == 'up') {
@@ -20,7 +22,7 @@ class GoldRush extends Matrix {
             newPosition.x--
         }
         else if (direction == 'right') {
-            if (oldPosition.x == 4) { return }
+            if (oldPosition.x == this.numColumns - 1) { return }
             newPosition.x++
         }
         let playerName = 'player' + player
