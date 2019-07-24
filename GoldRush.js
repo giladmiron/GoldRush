@@ -27,7 +27,7 @@ class GoldRush extends Matrix {
         if (this.get(newPosition.y, newPosition.x) == 'C') {
             this[playerName].score += 10
         }
-        if (this.get(newPosition.y, newPosition.x) == '2' ||this.get(newPosition.y, newPosition.x) == '1'  ) {
+        if (this.get(newPosition.y, newPosition.x) == '2' || this.get(newPosition.y, newPosition.x) == '1') {
             return
         }
         this.alter(oldPosition.y, oldPosition.x, '.')

@@ -9,18 +9,18 @@ class Matrix {
         for (let r = 0; r < numRows; r++) {
             this.matrix.push([])
             for (let c = 0; c < numColumns; c++) {
-                this.matrix[r].push('.')
+                let ranNum = Math.random()
+                if (ranNum * 100 < 70) {
+                    this.matrix[r].push('.')
+                } else {
+                    this.matrix[r].push('C')
+                }
             }
         }
 
-        for (let i = 0; i < 7; i++) {
-            let ranRow = Math.floor(Math.random() * Math.floor(numRows - 1))
-            let ranCol = Math.floor(Math.random() * Math.floor(numRows - 1))
-            this.alter(ranRow, ranCol, 'C')
+        this.alter(0, 0, 1)
+        this.alter(numRows - 1, numColumns - 1, 2)
 
-            this.alter(0, 0, 1)
-            this.alter(numRows-1, numColumns-1, 2)
-        }
         return this.matrix
     }
 
