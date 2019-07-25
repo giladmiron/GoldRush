@@ -7,7 +7,7 @@
     display: inline-block;
     
 }
-.box {
+.box{
     width: 20px;
     height: 20px;
     border: 1px solid rgb(48, 211, 56);
@@ -16,5 +16,8 @@
     font-weight: bold;
     font-size: 20px;
     text-align: center;
-    /* background-image: url('https://gph.is/2pmBQW1') */
 }
+
+/* .O{
+    background-color: black;
+} */

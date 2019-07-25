@@ -39,7 +39,7 @@ class GoldRush extends Matrix {
         }
 
         //prevents of players to run over each other
-        if (this.get(newPosition.y, newPosition.x) == '2' || this.get(newPosition.y, newPosition.x) == '1') {
+        if (this.get(newPosition.y, newPosition.x) == '2' || this.get(newPosition.y, newPosition.x) == '1' || (this.get(newPosition.y, newPosition.x) == 'O')) {
             return
         }
 

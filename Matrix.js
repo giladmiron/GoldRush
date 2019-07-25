@@ -10,10 +10,12 @@ class Matrix {
             this.matrix.push([])
             for (let c = 0; c < numColumns; c++) {
                 let ranNum = Math.random()
-                if (ranNum * 100 < 70) {
+                if (ranNum * 100 <= 40) {
                     this.matrix[r].push('.')
-                } else {
+                } else if (ranNum * 100 > 40 && ranNum * 100 <=85 ) {
                     this.matrix[r].push('C')
+                } else if (ranNum * 100 > 85) {
+                    this.matrix[r].push('O')
                 }
             }
         }
