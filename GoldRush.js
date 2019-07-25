@@ -26,39 +26,27 @@ class GoldRush extends Matrix {
             newPosition.x++
         }
         let playerName = 'player' + player
+
+        //checks if the player deserves score
         if (this.get(newPosition.y, newPosition.x) == 'C') {
             this[playerName].score++
         }
-        console.log(this[playerName])
+        
+        //checks if the player won the game
         if (this[playerName].score >= this.coins / 2) {
             alert(`${playerName} won the game!`)
             location.reload()
         }
+
+        //prevents of players to run over each other
         if (this.get(newPosition.y, newPosition.x) == '2' || this.get(newPosition.y, newPosition.x) == '1') {
             return
         }
+
+        //changes the values in the old and new locations
         this.alter(oldPosition.y, oldPosition.x, '.')
         this.alter(newPosition.y, newPosition.x, player)
 
     }
 }
-
-// const board = new GoldRush(5, 5)
-// board.print() //the print method should be defined inside of Matrix
-// board.movePlayer(1, "down") //this method should be defined inside of GoldRush
-// board.print()
-// board.movePlayer(2, "left")
-// board.print()
-// const board = new GoldRush(5, 5)
-// console.log(board.player1.score) //prints 0
-// board.print()
-// board.movePlayer(1, "down")
-// console.log(board.player1.score) //prints 0
-// board.print()
-// board.movePlayer(1, "down")
-// console.log(board.player1.score) //prints 10
-// board.print()
-// board.movePlayer(1, "down")
-// console.log(board.player1.score) //prints 10
-// board.print()
 

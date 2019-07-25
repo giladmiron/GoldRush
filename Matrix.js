@@ -21,6 +21,7 @@ class Matrix {
         this.alter(0, 0, 1)
         this.alter(numRows - 1, numColumns - 1, 2)
 
+        //counts the number of C on the board (for winning check after)
         this.coins = 0
         for (let i of this.matrix) {
             for (let o of i) {
@@ -29,21 +30,11 @@ class Matrix {
                 }
             }
         }
+
+        // for the developer
         console.log(`there are ${this.coins} coins`)
+
         return this.matrix
-    }
-
-
-    print() {
-        let str = ""
-        for (let i of this.matrix) {
-            for (let n of i) {
-                str = str + n + "\t"
-            }
-            console.log(str)
-            str = ""
-        }
-
     }
 
     get(rowNum, colNum) {
@@ -52,17 +43,6 @@ class Matrix {
 
     alter(row, col, val) {
         this.matrix[row][col] = val
-    }
-
-    printRow(rowNum) {
-        for (let i = 0; i < this.matrix[rowNum].length; i++) {
-            console.log(this.matrix[rowNum][i])
-        }
-    }
-    printColumn(colNum) {
-        for (let i = 0; i < this.matrix.length; i++) {
-            console.log(this.matrix[i][colNum])
-        }
     }
 
     findCoordinate(value) {

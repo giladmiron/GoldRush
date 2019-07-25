@@ -1,9 +1,6 @@
 
 const renderer = new Renderer()
 let board
-// const board = new GoldRush(5, 5)
-// renderer.renderScores()
-// renderer.renderBoard(board.matrix)
 
 $('.sizeButton').on('click', function () {
     let size = $('.sizeInput').val()
