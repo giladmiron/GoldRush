@@ -31,7 +31,7 @@ class GoldRush extends Matrix {
         if (this.get(newPosition.y, newPosition.x) == 'C') {
             this[playerName].score++
         }
-        
+
         //checks if the player won the game
         if (this[playerName].score >= this.coins / 2) {
             alert(`${playerName} won the game!`)

@@ -9,6 +9,7 @@ $('.sizeButton').on('click', function () {
     renderer.renderBoard(board.matrix)
 })
 
+
 $(document).keypress(function (e) {
     e = e.which
     // console.log(e)
